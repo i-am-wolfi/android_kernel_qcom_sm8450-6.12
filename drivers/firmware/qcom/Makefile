@@ -20,3 +20,7 @@ endif
 
 obj-$(CONFIG_QCOM_SCM_SMCI) += qcom_scm_smci.o
 qcom_scm_smci-$(CONFIG_QCOM_SCM_SMCI) += qcom_scm-smcinvoke.o
+
+# --- marble: objs upstream restaurados ---
+obj-$(CONFIG_QCOM_QSEECOM) += qcom_qseecom.o
+obj-$(CONFIG_QCOM_QSEECOM_UEFISECAPP) += qcom_qseecom_uefisecapp.o

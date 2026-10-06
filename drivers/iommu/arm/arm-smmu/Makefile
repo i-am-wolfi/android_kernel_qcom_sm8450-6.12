@@ -8,3 +8,6 @@ arm_smmu-$(CONFIG_ARM_SMMU_NVIDIA) += arm-smmu-nvidia.o
 arm_smmu-$(CONFIG_ARM_SMMU_QCOM) += arm-smmu-qcom.o arm-smmu-qcom-pm.o
 arm_smmu-$(CONFIG_ARM_SMMU_QCOM_DEBUG) += arm-smmu-qcom-debug.o
 
+
+# --- marble: objs upstream restaurados ---
+obj-$(CONFIG_QCOM_IOMMU) += qcom_iommu.o

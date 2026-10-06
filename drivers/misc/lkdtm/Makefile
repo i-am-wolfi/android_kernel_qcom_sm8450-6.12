@@ -12,3 +12,20 @@ OBJCOPYFLAGS_rodata_objcopy.o	:= \
 targets += rodata.o rodata_objcopy.o
 $(obj)/rodata_objcopy.o: $(obj)/rodata.o FORCE
 	$(call if_changed,objcopy)
+
+# --- marble: objs upstream restaurados ---
+lkdtm-$(CONFIG_LKDTM)		+= core.o
+lkdtm-$(CONFIG_LKDTM)		+= bugs.o
+lkdtm-$(CONFIG_LKDTM)		+= heap.o
+lkdtm-$(CONFIG_LKDTM)		+= perms.o
+lkdtm-$(CONFIG_LKDTM)		+= refcount.o
+lkdtm-$(CONFIG_LKDTM)		+= rodata_objcopy.o
+lkdtm-$(CONFIG_LKDTM)		+= usercopy.o
+lkdtm-$(CONFIG_LKDTM)		+= stackleak.o
+lkdtm-$(CONFIG_LKDTM)		+= cfi.o
+lkdtm-$(CONFIG_LKDTM)		+= fortify.o
+KASAN_SANITIZE_stackleak.o	:= n
+CFLAGS_REMOVE_rodata.o			+= $(CC_FLAGS_LTO) $(RETHUNK_CFLAGS) $(CC_FLAGS_CFI)
+OBJCOPYFLAGS :=
+$(obj)/rodata_objcopy.o: $(obj)/rodata.o FORCE
+	$(call if_changed,objcopy)

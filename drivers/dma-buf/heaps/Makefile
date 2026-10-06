@@ -14,3 +14,7 @@ qcom_dma_heaps-$(CONFIG_QCOM_DMABUF_HEAPS_SYSTEM_MOVABLE) += qcom_system_movable
 
 obj-$(CONFIG_QCOM_DMABUF_HEAPS_DEFERRED_FREE) += deferred-free-helper.o
 
+
+# --- marble: objs upstream restaurados ---
+obj-$(CONFIG_DMABUF_HEAPS_SYSTEM) += system_heap.o
+obj-$(CONFIG_DMABUF_HEAPS_CMA) += cma_heap.o

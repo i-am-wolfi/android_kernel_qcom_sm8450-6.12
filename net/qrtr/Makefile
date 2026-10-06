@@ -20,3 +20,9 @@ qrtr-smd-objs += smd.o
 obj-$(CONFIG_QRTR_TUN) += qrtr-tun.o
 qrtr-tun-objs += tun.o
 
+
+# --- marble: objs upstream restaurados ---
+qrtr-y	:= af_qrtr.o ns.o
+qrtr-smd-y	:= smd.o
+qrtr-tun-y	:= tun.o
+qrtr-mhi-y	:= mhi.o

@@ -17,3 +17,21 @@ $(obj)/pkvm/kvm_nvhe.o: FORCE
 
 qcom_smmu_v2_v3_dispatcher-objs += pkvm/kvm_nvhe.o
 endif
+
+# --- marble: objs upstream restaurados ---
+arm_smmu_v3-y := arm-smmu-v3.o
+arm_smmu_v3-y += arm-smmu-v3-common.o
+arm_smmu_v3-$(CONFIG_ARM_SMMU_V3_SVA) += arm-smmu-v3-sva.o
+arm_smmu_v3-$(CONFIG_TEGRA241_CMDQV) += tegra241-cmdqv.o
+obj-$(CONFIG_ARM_SMMU_V3_KUNIT_TEST) += arm-smmu-v3-test.o
+obj-$(CONFIG_ARM_SMMU_V3_PKVM) += arm_smmu_v3_kvm.o
+arm_smmu_v3_kvm-objs-y += arm-smmu-v3-kvm.o
+arm_smmu_v3_kvm-objs-y += arm-smmu-v3-common.o
+arm_smmu_v3_kvm-objs := $(arm_smmu_v3_kvm-objs-y)
+ifeq ($(CONFIG_ARM_SMMU_V3_PKVM),m)
+$(obj)/pkvm/kvm_nvhe.o: FORCE
+	$(Q)$(MAKE) $(build)=$(obj)/pkvm $(obj)/pkvm/kvm_nvhe.o
+endif
+ifeq ($(CONFIG_ARM_SMMU_V3_PKVM),m)
+arm_smmu_v3_kvm-objs += pkvm/kvm_nvhe.o
+endif

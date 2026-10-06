@@ -19,3 +19,14 @@ stm_p_ost-objs += p_ost.o
 
 obj-$(CONFIG_STM_PASSTHROUGH) += stm_passthrough.o
 
+
+# --- marble: objs upstream restaurados ---
+stm_core-y		:= core.o policy.o
+obj-$(CONFIG_STM_PROTO_BASIC) += stm_p_basic.o
+obj-$(CONFIG_STM_PROTO_SYS_T) += stm_p_sys-t.o
+stm_p_basic-y		:= p_basic.o
+stm_p_sys-t-y		:= p_sys-t.o
+obj-$(CONFIG_STM_DUMMY) += dummy_stm.o
+stm_console-y		:= console.o
+stm_heartbeat-y		:= heartbeat.o
+stm_ftrace-y		:= ftrace.o

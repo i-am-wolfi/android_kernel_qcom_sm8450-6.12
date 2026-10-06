@@ -12,14 +12,15 @@ struct device;
 bool qcom_tzmem_get_status(void);
 int qcom_tzmem_enable(struct device *dev);
 
-#if IS_ENABLED(CONFIG_QCOM_TZMEM_MODE_SHMBRIDGE)
-
 enum bridge_owner {
 	/**< Bridge is owned by tzmem/shmbridge. */
 	SELF = 1,
 	/**< Bridge is owned by other users. */
 	OTHERS,
 };
+#if IS_ENABLED(CONFIG_QCOM_TZMEM_MODE_SHMBRIDGE)
+
+
 
 int32_t qcom_tzmem_query(phys_addr_t paddr);
 int qcom_tzmem_shm_bridge_create_with_vmid(phys_addr_t paddr, size_t size, u32 *ns_vmid_list,
@@ -39,17 +40,17 @@ static inline int qcom_tzmem_shm_bridge_create_with_vmid(phys_addr_t paddr, size
 {
 	return 0;
 }
-static int qcom_tzmem_pm_freeze(void)
+static __maybe_unused int qcom_tzmem_pm_freeze(void)
 {
 	return 0;
 }
 
-static int qcom_tzmem_pm_restore(void)
+static __maybe_unused int qcom_tzmem_pm_restore(void)
 {
 	return 0;
 }
 
-static int qcom_tzmem_pm_thaw(void)
+static __maybe_unused int qcom_tzmem_pm_thaw(void)
 {
 	return 0;
 }

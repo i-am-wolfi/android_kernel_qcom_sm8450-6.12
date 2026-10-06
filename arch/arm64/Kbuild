@@ -8,3 +8,7 @@ obj-$(CONFIG_CRYPTO)	+= crypto/
 
 # for cleaning
 subdir- += boot
+
+# --- marble: objs upstream restaurados ---
+subdir-ccflags-$(CONFIG_TRACE_BRANCH_PROFILING) += -DDISABLE_BRANCH_PROFILING
+obj-$(CONFIG_MTK_GZVM) += geniezone/

@@ -10,3 +10,34 @@ obj-$(CONFIG_STMMAC_PLATFORM) += stmmac_platform.o
 obj-$(CONFIG_DWMAC_QCOM_ETHQOS) += dwmac-qcom-eth.o
 dwmac-qcom-eth-objs += dwmac-qcom-ethqos.o
 
+
+# --- marble: objs upstream restaurados ---
+stmmac-$(CONFIG_STMMAC_SELFTESTS) += stmmac_selftests.o
+obj-$(CONFIG_STMMAC_PLATFORM) += stmmac-platform.o
+obj-$(CONFIG_DWMAC_ANARION) += dwmac-anarion.o
+obj-$(CONFIG_DWMAC_INGENIC) += dwmac-ingenic.o
+obj-$(CONFIG_DWMAC_IPQ806X) += dwmac-ipq806x.o
+obj-$(CONFIG_DWMAC_LPC18XX) += dwmac-lpc18xx.o
+obj-$(CONFIG_DWMAC_MEDIATEK) += dwmac-mediatek.o
+obj-$(CONFIG_DWMAC_MESON) += dwmac-meson8b.o dwmac-meson.o
+obj-$(CONFIG_DWMAC_ROCKCHIP) += dwmac-rk.o
+obj-$(CONFIG_DWMAC_RZN1) += dwmac-rzn1.o
+obj-$(CONFIG_DWMAC_SOCFPGA) += dwmac-altr-socfpga.o
+obj-$(CONFIG_DWMAC_STARFIVE) += dwmac-starfive.o
+obj-$(CONFIG_DWMAC_STI) += dwmac-sti.o
+obj-$(CONFIG_DWMAC_STM32) += dwmac-stm32.o
+obj-$(CONFIG_DWMAC_SUNXI) += dwmac-sunxi.o
+obj-$(CONFIG_DWMAC_SUN8I) += dwmac-sun8i.o
+obj-$(CONFIG_DWMAC_DWC_QOS_ETH) += dwmac-dwc-qos-eth.o
+obj-$(CONFIG_DWMAC_INTEL_PLAT) += dwmac-intel-plat.o
+obj-$(CONFIG_DWMAC_LOONGSON1) += dwmac-loongson1.o
+obj-$(CONFIG_DWMAC_GENERIC) += dwmac-generic.o
+obj-$(CONFIG_DWMAC_IMX8) += dwmac-imx.o
+obj-$(CONFIG_DWMAC_TEGRA) += dwmac-tegra.o
+obj-$(CONFIG_DWMAC_VISCONTI) += dwmac-visconti.o
+stmmac-platform-objs:= stmmac_platform.o
+dwmac-altr-socfpga-objs := dwmac-socfpga.o
+obj-$(CONFIG_STMMAC_PCI) += stmmac-pci.o
+obj-$(CONFIG_DWMAC_INTEL) += dwmac-intel.o
+obj-$(CONFIG_DWMAC_LOONGSON) += dwmac-loongson.o
+stmmac-pci-objs:= stmmac_pci.o

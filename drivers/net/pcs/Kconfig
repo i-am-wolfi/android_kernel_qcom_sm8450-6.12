@@ -33,6 +33,9 @@ config PCS_RZN1_MIIC
 	  on RZ/N1 SoCs. This PCS converts MII to RMII/RGMII or can be set in
 	  pass-through mode for MII.
 
+endmenu
+
+# --- marble: qcom additions (merged) ---
 config PCS_QCOM
 	tristate "Qualcomm Technologies, Inc. XPCS controller"
 	select PHYLINK
@@ -43,4 +46,3 @@ config PCS_QCOM
 	  for 2.5Gbps Full Duplex mode. It's role is to support Clause 37
 	  Autonegotiation and EEE for STMMAC Ethernet controllers.
 
-endmenu

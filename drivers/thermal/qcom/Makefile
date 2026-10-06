@@ -71,3 +71,8 @@ thermal-generic-adc-objs += ../thermal-generic-adc.o
 
 obj-$(CONFIG_QTI_AOP_REG_COOLING_DEVICE) += regulator_aop_cdev.o
 
+
+# --- marble: objs upstream restaurados ---
+qcom_tsens-y			+= tsens.o tsens-v2.o tsens-v1.o tsens-v0_1.o \
+				   tsens-8960.o
+obj-$(CONFIG_QCOM_LMH) += lmh.o
