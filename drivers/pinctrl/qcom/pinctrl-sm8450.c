@@ -1668,6 +1668,9 @@ static int sm8450_tlmm_probe(struct platform_device *pdev)
 
 static const struct of_device_id sm8450_tlmm_of_match[] = {
 	{ .compatible = "qcom,sm8450-tlmm", },
+	/* fase1 marble: cape-tlmm e o mesmo IP (211 gpios); driver sm8450 */
+	{ .compatible = "qcom,cape-pinctrl", },
+	{ .compatible = "qcom,cape-vm-pinctrl", },
 	{ },
 };
 
